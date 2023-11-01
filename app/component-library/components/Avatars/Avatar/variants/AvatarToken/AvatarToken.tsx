@@ -41,9 +41,16 @@ const AvatarToken = ({
 
   const onError = () => setShowFallback(true);
 
-  const isIpfsDisabledAndUriIsIpfs = imageSource
-    ? !isIpfsGatewayEnabled && isIPFSUri(imageSource)
-    : false;
+  let isIpfsDisabledAndUriIsIpfs = false;
+  if (
+    imageSource &&
+    typeof imageSource === 'object' &&
+    !Array.isArray(imageSource) &&
+    'uri' in imageSource
+  ) {
+    isIpfsDisabledAndUriIsIpfs =
+      !isIpfsGatewayEnabled && isIPFSUri(imageSource.uri || null);
+  }
 
   const tokenImage = () => (
     <AvatarBase size={size} style={styles.base}>
