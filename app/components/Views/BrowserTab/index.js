@@ -54,7 +54,6 @@ import { MetaMetricsEvents } from '../../../core/Analytics';
 import AnalyticsV2, { trackErrorAsAnalytics } from '../../../util/analyticsV2';
 import setOnboardingWizardStep from '../../../actions/wizard';
 import OnboardingWizard from '../../UI/OnboardingWizard';
-import DrawerStatusTracker from '../../../core/DrawerStatusTracker';
 import EntryScriptWeb3 from '../../../core/EntryScriptWeb3';
 import ErrorBoundary from '../ErrorBoundary';
 
@@ -604,13 +603,6 @@ export const BrowserTab = (props) => {
   }, []);
 
   /**
-   * Handle when the drawer (app menu) is opened
-   */
-  const drawerOpenHandler = useCallback(() => {
-    dismissTextSelectionIfNeeded();
-  }, [dismissTextSelectionIfNeeded]);
-
-  /**
    * Set initial url, dapp scripts and engine. Similar to componentDidMount
    */
   useEffect(() => {
@@ -628,25 +620,7 @@ export const BrowserTab = (props) => {
     return function cleanup() {
       backgroundBridges.current.forEach((bridge) => bridge.onDisconnect());
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (Device.isAndroid()) {
-      DrawerStatusTracker.hub.on('drawer::open', drawerOpenHandler);
-    }
-
-    return function cleanup() {
-      if (Device.isAndroid()) {
-        DrawerStatusTracker &&
-          DrawerStatusTracker.hub &&
-          DrawerStatusTracker.hub.removeListener(
-            'drawer::open',
-            drawerOpenHandler,
-          );
-      }
-    };
-  }, [drawerOpenHandler]);
 
   /**
    * Set navigation listeners
@@ -1491,15 +1465,15 @@ export const BrowserTab = (props) => {
                 onLoadEnd={onLoadEnd}
                 onLoadProgress={onLoadProgress}
                 onMessage={onMessage}
-                // onError={onError}
-                // onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
-                // sendCookies
-                // javascriptEnabled
-                // allowsInlineMediaPlayback
-                // useWebkit
+                onError={onError}
+                onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
+                sendCookies
+                javascriptEnabled
+                allowsInlineMediaPlayback
+                useWebkit
                 testID={'browser-webview'}
                 applicationNameForUserAgent={'WebView MetaMaskMobile'}
-                // onFileDownload={handleOnFileDownload}
+                onFileDownload={handleOnFileDownload}
               />
               {ipfsBannerVisible && renderIpfsBanner()}
             </>
