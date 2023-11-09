@@ -133,8 +133,6 @@ prebuild_ios(){
 }
 
 prebuild_android(){
-	adb kill-server
-	adb start-server
 	prebuild
 	# Copy JS files for injection
 	yes | cp -rf app/core/InpageBridgeWeb3.js android/app/src/main/assets/.
@@ -439,11 +437,6 @@ elif [ "$MODE" == "release" ]; then
 	echo "RELEASE SENTRY PROPS"
 	checkAuthToken 'sentry.release.properties'
 	export SENTRY_PROPERTIES="${REPO_ROOT_DIR}/sentry.release.properties"
-fi
-
-if [ -z "$METAMASK_ENVIRONMENT" ]; then
-	printError "Missing METAMASK_ENVIRONMENT; set to 'production' for a production release, 'prerelease' for a pre-release, or 'local' otherwise"
-	exit 1
 fi
 
 if [ "$PLATFORM" == "ios" ]; then

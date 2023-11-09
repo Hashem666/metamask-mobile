@@ -1148,9 +1148,9 @@ export const BrowserTab = (props) => {
   const onError = ({ nativeEvent: errorInfo }) => {
     Logger.log(errorInfo);
     props.navigation.setParams({
-      error: true,
+      error: false,
     });
-    setError(errorInfo);
+    // setError(errorInfo);
   };
 
   /**
@@ -1491,15 +1491,15 @@ export const BrowserTab = (props) => {
                 onLoadEnd={onLoadEnd}
                 onLoadProgress={onLoadProgress}
                 onMessage={onMessage}
-                onError={onError}
-                onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
-                sendCookies
-                javascriptEnabled
-                allowsInlineMediaPlayback
-                useWebkit
+                // onError={onError}
+                // onShouldStartLoadWithRequest={onShouldStartLoadWithRequest}
+                // sendCookies
+                // javascriptEnabled
+                // allowsInlineMediaPlayback
+                // useWebkit
                 testID={'browser-webview'}
                 applicationNameForUserAgent={'WebView MetaMaskMobile'}
-                onFileDownload={handleOnFileDownload}
+                // onFileDownload={handleOnFileDownload}
               />
               {ipfsBannerVisible && renderIpfsBanner()}
             </>
