@@ -22303,8 +22303,8 @@ react-native-webview-invoke@^0.6.2:
   integrity sha512-PCzP7Zl3XwHU10JYS8nR0gwuR8XiOO0MhC8y9ZuPPI+HeISn95GvNYhOXxeLgfbdbUcpNWh1HqxPDySlfCIqxg==
 
 "react-native-webview@https://github.com/jpcloureiro/react-native-webview.git":
-  version "11.21.2"
-  resolved "https://github.com/jpcloureiro/react-native-webview.git#69e35723dd4f63d8b58f5c7f5aed97a8fcad7ee4"
+  version "13.6.2"
+  resolved "https://github.com/jpcloureiro/react-native-webview.git#fd61a320579fda6b57989a81460e03ec2d59a7ca"
   dependencies:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
