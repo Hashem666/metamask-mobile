@@ -27,6 +27,7 @@ git push --set-upstream origin "${PR_BRANCH_NAME}"
 
 gh pr create \
   --draft \
+  --base "${BASE_PR_BRANCH_NAME}" \
   --title "${PR_TITLE}" \
   --body "${PR_BODY}" \
-  --head "${BASE_PR_BRANCH_NAME}"
+  --head "${PR_BRANCH_NAME}"
