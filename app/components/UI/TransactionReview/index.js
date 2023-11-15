@@ -291,13 +291,16 @@ class TransactionReview extends PureComponent {
 
   componentDidUpdate = async (prevProps) => {
     const previousBlockaidResult =
-      prevProps.transaction?.securityAlertResponse?.result_type;
+      prevProps.transaction?.currentTransactionSecurityAlertResponse?.response
+        .result_type;
     const newBlockaidResult =
-      this.props.transaction?.securityAlertResponse?.result_type;
+      this.props.transaction?.currentTransactionSecurityAlertResponse?.response
+        .result_type;
 
     if (previousBlockaidResult !== newBlockaidResult) {
       const additionalParams = getBlockaidMetricsParams(
-        this.props.transaction?.securityAlertResponse,
+        this.props.transaction?.currentTransactionSecurityAlertResponse
+          .response,
       );
 
       InteractionManager.runAfterInteractions(() => {
@@ -317,6 +320,7 @@ class TransactionReview extends PureComponent {
       chainId,
       tokenList,
     } = this.props;
+
     let { showHexData } = this.props;
     let assetAmount, conversionRate, fiatValue;
     showHexData = showHexData || data;
@@ -340,9 +344,9 @@ class TransactionReview extends PureComponent {
 
     let additionalParams;
 
-    if (transaction?.securityAlertResponse) {
+    if (transaction?.currentTransactionSecurityAlertResponse?.response) {
       additionalParams = getBlockaidMetricsParams(
-        transaction?.securityAlertResponse,
+        transaction?.currentTransactionSecurityAlertResponse.response,
       );
     }
 
@@ -372,7 +376,9 @@ class TransactionReview extends PureComponent {
   onContactUsClicked = () => {
     const { transaction } = this.props;
     const additionalParams = {
-      ...getBlockaidMetricsParams(transaction?.securityAlertResponse),
+      ...getBlockaidMetricsParams(
+        transaction?.currentTransactionSecurityAlertResponse,
+      ),
       external_link_clicked: 'security_alert_support_link',
     };
     AnalyticsV2.trackEvent(

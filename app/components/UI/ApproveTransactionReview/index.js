@@ -332,7 +332,14 @@ class ApproveTransactionReview extends PureComponent {
   componentDidMount = async () => {
     const { chainId } = this.props;
     const {
-      transaction: { origin, to, data, from, transaction },
+      transaction: {
+        origin,
+        to,
+        data,
+        from,
+        currentTransactionSecurityAlertResponse,
+        transaction,
+      },
       setTransactionObject,
       tokenList,
       tokenAllowanceState,
@@ -462,10 +469,12 @@ class ApproveTransactionReview extends PureComponent {
         spendLimitCustomValue: minTokenAllowance,
       },
       () => {
-        AnalyticsV2.trackEvent(
-          MetaMetricsEvents.APPROVAL_STARTED,
-          this.getAnalyticsParams(),
-        );
+        if (currentTransactionSecurityAlertResponse?.response) {
+          AnalyticsV2.trackEvent(
+            MetaMetricsEvents.APPROVAL_STARTED,
+            this.getAnalyticsParams(),
+          );
+        }
       },
     );
     if (isMultiLayerFeeNetwork(chainId)) {
@@ -503,18 +512,21 @@ class ApproveTransactionReview extends PureComponent {
     }
 
     const previousBlockaidResult =
-      prevProps.transaction?.securityAlertResponse?.result_type;
+      prevProps.transaction?.currentTransactionSecurityAlertResponse?.response
+        .result_type;
     const newBlockaidResult =
-      this.props.transaction?.securityAlertResponse?.result_type;
+      this.props.transaction?.currentTransactionSecurityAlertResponse?.response
+        .result_type;
 
     if (previousBlockaidResult !== newBlockaidResult) {
       const additionalParams = getBlockaidMetricsParams(
-        this.props.transaction?.securityAlertResponse,
+        this.props.transaction?.currentTransactionSecurityAlertResponse
+          ?.response,
       );
 
       InteractionManager.runAfterInteractions(() => {
         AnalyticsV2.trackEvent(
-          MetaMetricsEvents.TRANSACTIONS_CONFIRM_STARTED,
+          MetaMetricsEvents.APPROVAL_STARTED,
           additionalParams,
         );
       });
@@ -556,7 +568,7 @@ class ApproveTransactionReview extends PureComponent {
       };
 
       const blockaidParams = getBlockaidMetricsParams(
-        transaction.securityAlertResponse,
+        transaction.currentTransactionSecurityAlertResponse?.response,
       );
 
       params = {
