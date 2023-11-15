@@ -12,7 +12,6 @@ import { ThemeContext, mockTheme } from '../../../util/theme';
 import sanitizeString from '../../../util/string';
 
 import {
-  addSignatureErrorListener,
   getAnalyticsParams,
   handleSignatureAction,
   removeSignatureErrorListener,

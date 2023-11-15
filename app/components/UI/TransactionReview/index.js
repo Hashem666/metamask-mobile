@@ -263,7 +263,6 @@ class TransactionReview extends PureComponent {
     conversionRate: undefined,
     fiatValue: undefined,
     multiLayerL1FeeTotal: '0x0',
-    blockaidResultType: undefined,
   };
 
   fetchEstimatedL1Fee = async () => {
@@ -290,16 +289,13 @@ class TransactionReview extends PureComponent {
     }
   };
 
-  componentDidUpdate = async () => {
-    const previousBlockaidResult = this.state.blockaidResultType;
-    const newBlockaidResult = this.props.transaction?.securityAlertResponse?.result_type;
+  componentDidUpdate = async (prevProps) => {
+    const previousBlockaidResult =
+      prevProps.transaction?.securityAlertResponse?.result_type;
+    const newBlockaidResult =
+      this.props.transaction?.securityAlertResponse?.result_type;
 
     if (previousBlockaidResult !== newBlockaidResult) {
-      // Result Changed, update state and send analytics
-      this.setState({
-        blockaidResultType: newBlockaidResult,
-      });
-
       const additionalParams = getBlockaidMetricsParams(
         this.props.transaction?.securityAlertResponse,
       );
@@ -311,7 +307,7 @@ class TransactionReview extends PureComponent {
         );
       });
     }
-  }
+  };
 
   componentDidMount = async () => {
     const {
@@ -348,10 +344,6 @@ class TransactionReview extends PureComponent {
       additionalParams = getBlockaidMetricsParams(
         transaction?.securityAlertResponse,
       );
-
-      this.setState({
-        blockaidResultType: transaction?.securityAlertResponse?.result_type,
-      });
     }
 
     this.setState({

@@ -1,6 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text, TouchableOpacity, InteractionManager } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  InteractionManager,
+} from 'react-native';
 import { fontStyles } from '../../../styles/common';
 import { getHost } from '../../../util/browser';
 import { strings } from '../../../../locales/i18n';
@@ -168,10 +174,6 @@ class SignatureRequest extends PureComponent {
     securityAlertResponse: PropTypes.object,
   };
 
-  state = {
-    blockaidResultType: undefined,
-  };
-
   componentWillUnmount() {
     // store.dispatch(setSignatureRequestSecurityAlertResponse());
   }
@@ -179,33 +181,24 @@ class SignatureRequest extends PureComponent {
   componentDidMount = () => {
     const { type, securityAlertResponse } = this.props;
 
-    this.setState({
-      blockaidResultType: securityAlertResponse?.result_type,
-    });
-
     if (securityAlertResponse) {
       const analyticsParams = getAnalyticsParams(this.props, type);
       InteractionManager.runAfterInteractions(() => {
         AnalyticsV2.trackEvent(
           MetaMetricsEvents.SIGNATURE_REQUESTED,
-          analyticsParams
+          analyticsParams,
         );
       });
     }
-  }
+  };
 
-  componentDidUpdate = () => {
+  componentDidUpdate = (prevProps) => {
     const { type, securityAlertResponse } = this.props;
 
-    const previousBlockaidResult = this.state.blockaidResultType;
+    const previousBlockaidResult = prevProps.securityAlertResponse?.result_type;
     const newBlockaidResult = securityAlertResponse?.result_type;
 
     if (previousBlockaidResult !== newBlockaidResult) {
-      // Result Changed, update state and send analytics
-      this.setState({
-        blockaidResultType: newBlockaidResult,
-      });
-
       InteractionManager.runAfterInteractions(() => {
         AnalyticsV2.trackEvent(
           MetaMetricsEvents.SIGNATURE_REQUESTED,
@@ -213,7 +206,7 @@ class SignatureRequest extends PureComponent {
         );
       });
     }
-  }
+  };
 
   /**
    * Calls trackCancelSignature and onReject callback
