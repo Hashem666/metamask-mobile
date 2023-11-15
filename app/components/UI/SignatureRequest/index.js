@@ -174,10 +174,6 @@ class SignatureRequest extends PureComponent {
     securityAlertResponse: PropTypes.object,
   };
 
-  componentWillUnmount() {
-    // store.dispatch(setSignatureRequestSecurityAlertResponse());
-  }
-
   componentDidMount = () => {
     const { type, securityAlertResponse } = this.props;
 
