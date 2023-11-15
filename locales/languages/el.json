@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "Εάν εγκρίνετε αυτό το αίτημα, ένας τρίτος που είναι γνωστός για απάτες μπορεί να πάρει όλα τα περιουσιακά σας στοιχεία.",
-    "attribution": "Συμβουλές ασφαλείας από",
+    "attribution": "Με την υποστήριξη του",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Εάν εγκρίνετε αυτό το αίτημα, κάποιος μπορεί να κλέψει τα περιουσιακά σας στοιχεία που είναι καταχωρημένα στο Blur.",
     "deceptive_request_title": "Πρόκειται για παραπλανητικό αίτημα",
     "failed_title": "Το αίτημα μπορεί να μην είναι ασφαλές",
     "failed_description": "Λόγω σφάλματος, αυτό το αίτημα δεν επαληθεύτηκε από τον πάροχο ασφαλείας. Προχωρήστε με προσοχή.",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "Αλληλεπιδράτε με έναν κακόβουλο τομέα. Εάν εγκρίνετε αυτό το αίτημα, ενδέχεται να χάσετε τα περιουσιακά σας στοιχεία.",
     "other_description": "Εάν εγκρίνετε αυτό το αίτημα, ενδέχεται να χάσετε τα περιουσιακά σας στοιχεία.",
     "raw_signature_farming_description": "Εάν εγκρίνετε αυτό το αίτημα, ενδέχεται να χάσετε τα περιουσιακά σας στοιχεία.",
@@ -514,6 +516,7 @@
     "import_account": "Εισαγωγή λογαριασμού",
     "connect_hardware": "Σύνδεση πορτοφολιού υλικού",
     "imported": "Έγινε εισαγωγή",
+    "qr_hardware": "Υλικό QR",
     "remove_account_title": "Αφαίρεση λογαριασμού",
     "remove_account_message": "Θέλετε σίγουρα να αφαιρέσετε αυτόν τον λογαριασμό;",
     "no": "Όχι",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "Προβολή διεύθυνσης, υπολοίπου λογαριασμού και δραστηριότητας",
     "suggest_transactions": "Προτείνει συναλλαγές προς έγκριση",
     "disconnect": "Αποσύνδεση",
-    "disconnect_all_accounts": "Αποσύνδεση όλων των λογαριασμών"
+    "disconnect_all_accounts": "Αποσύνδεση όλων των λογαριασμών",
+    "deceptive_site_ahead": "Παραπλανητικός ιστότοπος εν όψει",
+    "deceptive_site_desc": "Ο ιστότοπος που προσπαθείτε να επισκεφθείτε δεν είναι ασφαλής. Οι εισβολείς μπορεί να σας εξαπατήσουν για να κάνουν κάτι επικίνδυνο.",
+    "learn_more": "Μάθετε περισσότερα",
+    "advisory_by": "Συμβουλές που παρέχονται από το Ethereum Phishing Detector και PhishFort",
+    "potential_threat": "Πιθανές απειλές περιλαμβάνουν",
+    "fake_metamask": "Ψεύτικες εκδόσεις του MetaMask",
+    "srp_theft": "Μυστική φράση ανάκτησης ή κλοπή κωδικού πρόσβασης",
+    "malicious_transactions": "Κακόβουλες συναλλαγές που οδηγούν σε απώλεια περιουσιακών στοιχείων"
   },
   "toast": {
     "connected_and_active": "συνδεδεμένοι και ενεργοί.",
@@ -991,7 +1002,6 @@
     "confirm": "Επιβεβαιωση"
   },
   "transaction": {
-    "hardware": "Υλικό",
     "alert": "ΕΙΔΟΠΟΙΗΣΗ",
     "amount": "Ποσό",
     "next": "Επόμενο",
@@ -1369,7 +1379,8 @@
     "you_can": "Ή μπορείτε",
     "add_network": "να προσθέσετε περισσότερα δίκτυα χειροκίνητα.",
     "select_network": "Επιλέξτε ένα δίκτυο",
-    "show_test_networks": "Εμφάνιση δοκιμαστικών δικτύων"
+    "show_test_networks": "Εμφάνιση δοκιμαστικών δικτύων",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "Άκυρο",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "ΠΡΟΒΟΛΗ ΣΥΝΕΔΡΙΩΝ",
     "network_not_supported": "Το τρέχον δίκτυο δεν υποστηρίζεται",
     "security_alerts": "Ειδοποιήσεις ασφαλείας",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "Παρακαλούμε μεταβείτε στο mainnet ή το sepolia"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "Εντάξει"
   },
   "whats_new": {
-    "title": "Δείτε τι νέο υπάρχει",
+    "title": "What's new",
     "blockaid": {
       "title": "Μείνετε ασφαλείς με ειδοποιήσεις ασφαλείας",
-      "description_1": "Αποφύγετε τις γνωστές απάτες, διατηρώντας παράλληλα το απόρρητό σας με τις ειδοποιήσεις ασφαλείας της Blockaid.",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "Πάντα να προβαίνετε σε δικό σας επιμελή έλεγχο προτού εγκρίνετε τα αιτήματα.",
-      "description_3": "Εάν ενεργοποιήσατε τις ειδοποιήσεις ασφαλείας από το OpenSea, σας μεταφέρουμε σε αυτή τη λειτουργία.",
       "action_text": "Ενεργοποίηση ειδοποιήσεων ασφαλείας"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "Αυτό το προσαρμοσμένο δίκτυο δεν αναγνωρίζεται",
     "invalid_chain": "Το %{rpcUrl} για αυτό το αναγνωριστικό αλυσίδας δεν ταιριάζει με την καταχώριση chainid.network",
     "alert_recommend": "Σας συστήνουμε",
-    "alert_verify": "να επαληθεύσετε το αναγνωριστικό αλυσίδας"
+    "alert_verify": "να επαληθεύσετε το αναγνωριστικό αλυσίδας",
+    "warning_subtext_new": {
+      "1": "Το MetaMask δεν επαληθεύει προσαρμοσμένα δίκτυα, επομένως εγκρίνετε μόνο δίκτυα που εμπιστεύεστε.",
+      "2": "Μάθετε περισσότερα σχετικά με τους κινδύνους και τις απάτες για την ασφάλεια δικτύου."
+    },
+    "invalid_rpc_url": "Αυτή η διεύθυνση δικτύου URL δεν αντιστοιχεί σε γνωστό πάροχο για αυτό το αναγνωριστικό αλυσίδας.",
+    "invalid_chain_token_decimals": "Φαίνεται ότι το δεκαδικό αυτού του δικτύου δεν ταιριάζει με το αναγνωριστικό αλυσίδας του.",
+    "unrecognized_chain_name": "Φαίνεται ότι το εμφανιζόμενο όνομα αυτού του δικτύου δεν ταιριάζει με το αναγνωριστικό αλυσίδας του.",
+    "unrecognized_chain_ticker": "Φαίνεται ότι το σύμβολο αυτού του δικτύου δεν ταιριάζει με αυτό το αναγνωριστικό αλυσίδας.",
+    "unrecognized_chain_id": "Δεν αναγνωρίζουμε αυτό το δίκτυο. Βεβαιωθείτε ότι το αναγνωριστικό αλυσίδας είναι σωστό προτού συνεχίσετε."
   },
   "media_player": {
     "loading": "Φόρτωση...",

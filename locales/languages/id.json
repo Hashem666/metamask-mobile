@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "Jika Anda menyetujui permintaan ini, pihak ketiga yang terdeteksi melakukan penipuan dapat mengambil semua aset Anda.",
-    "attribution": "Saran keamanan oleh",
+    "attribution": "Didukung oleh",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Jika Anda menyetujui permintaan ini, seseorang dapat mencuri aset Anda yang terdaftar di Blur.",
     "deceptive_request_title": "Ini adalah permintaan tipuan",
     "failed_title": "Permintaan mungkin tidak aman",
     "failed_description": "Karena terjadi kesalahan, permintaan ini tidak diverifikasi oleh penyedia keamanan. Lanjutkan dengan hati-hati.",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "Anda berinteraksi dengan domain berbahaya. Jika Anda menyetujui permintaan ini, aset Anda kemungkinan akan hilang.",
     "other_description": "Jika Anda menyetujui permintaan ini, aset Anda kemungkinan akan hilang.",
     "raw_signature_farming_description": "Jika Anda menyetujui permintaan ini, aset Anda kemungkinan akan hilang.",
@@ -514,6 +516,7 @@
     "import_account": "Impor akun",
     "connect_hardware": "Hubungkan dompet perangkat keras",
     "imported": "Diimpor",
+    "qr_hardware": "Perangkat keras QR",
     "remove_account_title": "Penghapusan akun",
     "remove_account_message": "Yakin ingin menghapus akun ini?",
     "no": "Tidak",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "Melihat alamat, saldo akun, dan aktivitas",
     "suggest_transactions": "Merekomendasikan transaksi untuk disetujui",
     "disconnect": "Memutus koneksi",
-    "disconnect_all_accounts": "Memutus koneksi semua akun"
+    "disconnect_all_accounts": "Memutus koneksi semua akun",
+    "deceptive_site_ahead": "Situs yang menipu terdeteksi",
+    "deceptive_site_desc": "Situs yang akan Anda kunjungi tidak aman. Penyerang dapat mengelabui Anda untuk melakukan sesuatu yang berbahaya.",
+    "learn_more": "Selengkapnya",
+    "advisory_by": "Penasihat disediakan oleh Ethereum Phishing Detector dan PhishFort",
+    "potential_threat": "Potensi ancaman meliputi",
+    "fake_metamask": "Versi palsu MetaMask",
+    "srp_theft": "Pencurian frasa pemulihan rahasia atau kata sandi",
+    "malicious_transactions": "Transaksi berbahaya yang mengakibatkan aset dicuri"
   },
   "toast": {
     "connected_and_active": "terhubung dan aktif.",
@@ -991,7 +1002,6 @@
     "confirm": "Konfirmasikan"
   },
   "transaction": {
-    "hardware": "Perangkat keras",
     "alert": "PERINGATAN",
     "amount": "Jumlah",
     "next": "Selanjutnya",
@@ -1369,7 +1379,8 @@
     "you_can": "Atau Anda dapat",
     "add_network": "menambahkan lebih banyak jaringan secara manual.",
     "select_network": "Pilih jaringan",
-    "show_test_networks": "Tampilkan jaringan pengujian"
+    "show_test_networks": "Tampilkan jaringan pengujian",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "Batal",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "LIHAT SESI",
     "network_not_supported": "Tidak mendukung jaringan saat ini",
     "security_alerts": "Peringatan keamanan",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "Harap beralih ke mainnet atau sepolia"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "Oke"
   },
   "whats_new": {
-    "title": "Lihat yang baru",
+    "title": "What's new",
     "blockaid": {
       "title": "Tetap aman bersama peringatan keamanan",
-      "description_1": "Hindari penipuan yang terdeteksi sambil tetap menjaga privasi Anda dengan peringatan keamanan yang didukung oleh Blockaid.",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "Selalu lakukan uji tuntas sendiri sebelum menyetujui permintaan.",
-      "description_3": "Jika Anda mengaktifkan peringatan keamanan dari OpenSea, kami telah memindahkan Anda ke fitur ini.",
       "action_text": "Aktifkan peringatan keamanan"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "Jaringan khusus ini tidak dikenali",
     "invalid_chain": "%{rpcUrl} untuk ID Chain ini tidak cocok dengan daftar chainid.network",
     "alert_recommend": "Kami merekomendasikan agar Anda",
-    "alert_verify": "memverifikasikan ID rantai"
+    "alert_verify": "memverifikasikan ID rantai",
+    "warning_subtext_new": {
+      "1": "MetaMask tidak memverifikasi jaringan khusus, jadi hanya setujui jaringan yang Anda percayai.",
+      "2": "Selengkapnya tentang risiko keamanan jaringan dan penipuan."
+    },
+    "invalid_rpc_url": "URL jaringan ini tidak cocok dengan penyedia yang dikenal untuk ID chain ini.",
+    "invalid_chain_token_decimals": "Sepertinya desimal jaringan ini tidak cocok dengan ID chain-nya.",
+    "unrecognized_chain_name": "Sepertinya nama displai jaringan ini tidak cocok dengan ID chain-nya.",
+    "unrecognized_chain_ticker": "Sepertinya simbol jaringan ini tidak cocok dengan ID chain-nya.",
+    "unrecognized_chain_id": "Kami tidak mengenali jaringan ini. Pastikan ID chain sudah benar sebelum melanjutkan."
   },
   "media_player": {
     "loading": "Memuat...",

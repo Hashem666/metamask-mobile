@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "Si aprueba esta solicitud, un tercero conocido por estafas podría quedarse con todos sus activos.",
-    "attribution": "Asesoramiento de seguridad por",
+    "attribution": "Impulsado por",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Si aprueba esta solicitud, alguien puede robar sus activos enlistados en Blur.",
     "deceptive_request_title": "Esta es una solicitud engañosa",
     "failed_title": "Es posible que la solicitud no sea segura",
     "failed_description": "Debido a un error, el proveedor de seguridad no verificó esta solicitud. Proceda con precaución.",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "Está interactuando con un dominio malicioso. Si aprueba esta solicitud, podría perder sus activos.",
     "other_description": "Si aprueba esta solicitud, podría perder sus activos.",
     "raw_signature_farming_description": "Si aprueba esta solicitud, podría perder sus activos.",
@@ -514,6 +516,7 @@
     "import_account": "Importar una cuenta",
     "connect_hardware": "Conectar monedero físico",
     "imported": "Importado",
+    "qr_hardware": "Hardware QR",
     "remove_account_title": "Eliminación de la cuenta",
     "remove_account_message": "¿Está seguro de que quiere quitar esta cuenta?",
     "no": "No",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "Ver dirección, saldo de cuenta y actividad",
     "suggest_transactions": "Sugerir transacciones para aprobar",
     "disconnect": "Desconectar",
-    "disconnect_all_accounts": "Desconectar todas las cuentas"
+    "disconnect_all_accounts": "Desconectar todas las cuentas",
+    "deceptive_site_ahead": "Sitio engañoso más adelante",
+    "deceptive_site_desc": "El sitio que intenta visitar no es seguro. Los atacantes pueden engañarlo para que haga algo peligroso.",
+    "learn_more": "Más información",
+    "advisory_by": "Aviso proporcionado por Ethereum Phishing Detector y PhishFort",
+    "potential_threat": "Las amenazas potenciales incluyen",
+    "fake_metamask": "Versiones falsas de MetaMask",
+    "srp_theft": "Robo de frase secreta de recuperación o contraseña",
+    "malicious_transactions": "Transacciones maliciosas que resultan en activos robados"
   },
   "toast": {
     "connected_and_active": "conectado y activo.",
@@ -991,7 +1002,6 @@
     "confirm": "Confirmar"
   },
   "transaction": {
-    "hardware": "Hardware",
     "alert": "ALERTA",
     "amount": "Importe",
     "next": "Siguiente",
@@ -1369,7 +1379,8 @@
     "you_can": "O puede",
     "add_network": "agregar más redes manualmente.",
     "select_network": "Seleccionar una red",
-    "show_test_networks": "Mostrar redes de prueba"
+    "show_test_networks": "Mostrar redes de prueba",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "Cancelar",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "VER SESIONES",
     "network_not_supported": "No se admite la red actual",
     "security_alerts": "Alertas de seguridad",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "Cambie a la red principal o a Sepolia"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "Aceptar"
   },
   "whats_new": {
-    "title": "Ver las novedades",
+    "title": "What's new",
     "blockaid": {
       "title": "Manténgase seguro con alertas de seguridad",
-      "description_1": "Aléjese de las estafas conocidas mientras conserva su privacidad con las alertas de seguridad impulsadas por Blockaid.",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "Siempre asegúrese de hacer su propia diligencia debida antes de aprobar cualquier solicitud.",
-      "description_3": "Si habilitó las alertas de seguridad de OpenSea, lo trasladamos a esta función.",
       "action_text": "Habilitar alertas de seguridad"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "La red personalizada no se reconoce",
     "invalid_chain": "La %{rpcUrl} de este id. de cadena no coincide con la lista chainid.network",
     "alert_recommend": "Le recomendamos",
-    "alert_verify": "verificar el id. de cadena"
+    "alert_verify": "verificar el id. de cadena",
+    "warning_subtext_new": {
+      "1": "MetaMask no verifica redes personalizadas, por lo que solo apruebe las redes en las que confíe.",
+      "2": "Obtenga más información sobre los riesgos y estafas de seguridad en la red."
+    },
+    "invalid_rpc_url": "Esta URL de red no coincide con ningún proveedor conocido para esta ID de cadena.",
+    "invalid_chain_token_decimals": "Parece que el decimal de esta red no coincide con su ID de cadena.",
+    "unrecognized_chain_name": "Parece que el nombre para mostrar de esta red no coincide con su ID de cadena.",
+    "unrecognized_chain_ticker": "Parece que el símbolo de esta red no coincide con el ID de esta cadena.",
+    "unrecognized_chain_id": "No reconocemos esta red. Asegúrese de que el ID de cadena sea correcto antes de continuar."
   },
   "media_player": {
     "loading": "Cargando…",

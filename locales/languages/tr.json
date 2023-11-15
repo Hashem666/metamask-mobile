@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "Bu talebi onaylarsanız dolandırıcılıkla bilinen üçüncü bir taraf tüm varlıklarınızı çalabilir.",
-    "attribution": "Güvenlik önerisi: ",
+    "attribution": "Destekleyen",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Bu talebi onaylarsanız birisi Blur üzerinde yer alan varlıklarınızı çalabilir.",
     "deceptive_request_title": "Bu, aldatıcı bir taleptir",
     "failed_title": "Talep güvenli olmayabilir",
     "failed_description": "Bu talep bir hatadan dolayı güvenlik sağlayıcısı tarafından doğrulanmadı. Dikkatli bir şekilde ilerleyin.",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "Kötü niyetli bir alanla etkileşimde bulunuyorsunuz. Bu talebi onaylarsanız varlıklarınızı kaybedebilirsiniz.",
     "other_description": "Bu talebi onaylarsanız varlıklarınızı kaybedebilirsiniz.",
     "raw_signature_farming_description": "Bu talebi onaylarsanız varlıklarınızı kaybedebilirsiniz.",
@@ -514,6 +516,7 @@
     "import_account": "Bir hesabı içe aktar",
     "connect_hardware": "Donanım cüzdanı bağla",
     "imported": "İçe aktarıldı",
+    "qr_hardware": "QR donanımı",
     "remove_account_title": "Hesap kaldırma",
     "remove_account_message": "Bu hesabı gerçekten kaldırmak istiyor musunuz?",
     "no": "Hayır",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "Adres, hesap bakiyesi ve aktiviteyi görme",
     "suggest_transactions": "Onaylanacak işlemleri önerme",
     "disconnect": "Bağlantıyı kes",
-    "disconnect_all_accounts": "Tüm hesapların bağlantısını kes"
+    "disconnect_all_accounts": "Tüm hesapların bağlantısını kes",
+    "deceptive_site_ahead": "Aldatıcı siteye gidiliyor",
+    "deceptive_site_desc": "Ziyaret etmeye çalıştığınız sayfa güvenli değil. Saldırganlar tehlikeli bir şey yapmanız konusunda sizi aldatabilir.",
+    "learn_more": "Daha fazla bilgi",
+    "advisory_by": "Ethereum Kimlik Avı Algılayıcı ve PhishFort tarafından sunulan uyarı",
+    "potential_threat": "Potansiyel tehditler şunları içerir",
+    "fake_metamask": "Sahte MetaMask sürümleri",
+    "srp_theft": "Gizli kurtarma ifadesi veya şifre hırsızlığı",
+    "malicious_transactions": "Varlıkların çalınmasına neden olan kötü amaçlı işlemler"
   },
   "toast": {
     "connected_and_active": "bağlandı ve aktif.",
@@ -991,7 +1002,6 @@
     "confirm": "Onayla"
   },
   "transaction": {
-    "hardware": "Donanım",
     "alert": "UYARI",
     "amount": "Tutar",
     "next": "Sonraki",
@@ -1369,7 +1379,8 @@
     "you_can": "Veya",
     "add_network": "manuel olarak daha fazla ekleyebilirsiniz.",
     "select_network": "Bir ağ seçin",
-    "show_test_networks": "Test ağlarını göster"
+    "show_test_networks": "Test ağlarını göster",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "İptal",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "OTURUMLARI GÖRÜNTÜLE",
     "network_not_supported": "Geçerli ağ desteklenmiyor",
     "security_alerts": "Güvenlik uyarıları",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "Lütfen ana ağa veya sepolia ağına geçin"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "Tamam"
   },
   "whats_new": {
-    "title": "Yeniliklere bakın",
+    "title": "What's new",
     "blockaid": {
       "title": "Güvenlik uyarıları ile güvende kalın",
-      "description_1": "Blockaid tarafından desteklenen güvenlik uyarıları ile gizliliğinizi korumaya devam ederken bilinen dolandırıcılıklardan uzak durun.",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "Talepleri onaylamadan önce kendiniz her zaman gerekli özeni gösterin.",
-      "description_3": "OpenSea'den güvenlik uyarılarını etkinleştirdiyseniz sizi bu özelliğe taşıdık.",
       "action_text": "Güvenlik uyarılarını etkinleştir"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "Bu kişisel ağ tanınmıyor",
     "invalid_chain": "Bu Zincir Kimliği için %{rpcUrl} zincir kimliği ağ listesi ile uyumlu değil",
     "alert_recommend": "Size",
-    "alert_verify": "zincir kimliğini doğrulamanızı öneririz"
+    "alert_verify": "zincir kimliğini doğrulamanızı öneririz",
+    "warning_subtext_new": {
+      "1": "MetaMask özel ağları doğrulamaz, bu yüzden sadece güvendiğiniz ağları onaylayın.",
+      "2": "Ağ güvenlik riskleri ve dolandırıcılıklar hakkında daha fazla bilgi alın."
+    },
+    "invalid_rpc_url": "Bu ağın URL adresi bu zincir kimliği için bilinen bir sağlayıcı ile eşleşmiyor.",
+    "invalid_chain_token_decimals": "Görünüşe göre, bu ağın ondalığı zincirinin kimliği ile eşleşmiyor.",
+    "unrecognized_chain_name": "Görünüşe göre, bu ağın görüntülenme adı zincir kimliği ile eşleşmiyor.",
+    "unrecognized_chain_ticker": "Görünüşe göre, bu ağın sembolü bu zincir kimliği ile eşleşmiyor.",
+    "unrecognized_chain_id": "Bu ağı tanıyamadık. Devam etmeden önce zincir kimliğinin doğru olduğundan emin olun."
   },
   "media_player": {
     "loading": "Yükleniyor...",

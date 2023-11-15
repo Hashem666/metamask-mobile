@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "Si vous approuvez cette demande, un tiers connu pour ses activités frauduleuses pourrait s’emparer de tous vos actifs.",
-    "attribution": "Conseils de sécurité fournis par",
+    "attribution": "Fourni par",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Si vous approuvez cette demande, quelqu’un pourrait s’emparer de vos actifs répertoriés sur Blur.",
     "deceptive_request_title": "Cette demande est trompeuse",
     "failed_title": "Cette demande peut présenter des risques",
     "failed_description": "À cause d’une erreur, cette demande n’a pas été vérifiée par le fournisseur de services de sécurité. Veuillez agir avec prudence.",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "Vous interagissez avec un domaine malveillant. Si vous approuvez cette demande, vous risquez de perdre vos actifs.",
     "other_description": "Si vous approuvez cette demande, vous risquez de perdre vos actifs.",
     "raw_signature_farming_description": "Si vous approuvez cette demande, vous risquez de perdre vos actifs.",
@@ -514,6 +516,7 @@
     "import_account": "Importer un compte",
     "connect_hardware": "Connecter un portefeuille matériel",
     "imported": "Importés",
+    "qr_hardware": "Matériel QR",
     "remove_account_title": "Suppression du compte",
     "remove_account_message": "Souhaitez-vous vraiment supprimer ce compte ?",
     "no": "Non",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "Consulter l’adresse, le solde et l’activité du compte",
     "suggest_transactions": "Proposer des transactions à approuver",
     "disconnect": "Déconnexion",
-    "disconnect_all_accounts": "Déconnecter tous les comptes"
+    "disconnect_all_accounts": "Déconnecter tous les comptes",
+    "deceptive_site_ahead": "Site trompeur à venir",
+    "deceptive_site_desc": "Le site que vous essayez de visiter n’est pas sécurisé. Les pirates peuvent vous inciter à agir de façon risquée.",
+    "learn_more": "En savoir plus",
+    "advisory_by": "Avis fourni par le détecteur d’hameçonnage Ethereum et PhishFort",
+    "potential_threat": "Parmi les menaces potentielles, il y a",
+    "fake_metamask": "Les fausses versions de MetaMask",
+    "srp_theft": "Le vol de phrase secrète de récupération ou de mot de passe",
+    "malicious_transactions": "Les transactions malveillantes pour voler vos actifs"
   },
   "toast": {
     "connected_and_active": "connecté et actif.",
@@ -991,7 +1002,6 @@
     "confirm": "Confirmer"
   },
   "transaction": {
-    "hardware": "Matériel",
     "alert": "ALERTE",
     "amount": "Montant",
     "next": "Suivant",
@@ -1369,7 +1379,8 @@
     "you_can": "Ou vous pouvez",
     "add_network": "ajouter manuellement d’autres réseaux.",
     "select_network": "Sélectionner un réseau",
-    "show_test_networks": "Afficher les réseaux de test"
+    "show_test_networks": "Afficher les réseaux de test",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "Annuler",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "VOIR LES SESSIONS",
     "network_not_supported": "Le réseau actuel n’est pas pris en charge",
     "security_alerts": "Alertes de sécurité",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "Veuillez passer à Mainnet ou à Sepolia"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "OK"
   },
   "whats_new": {
-    "title": "Voir les nouveautés",
+    "title": "What's new",
     "blockaid": {
       "title": "Restez en sécurité grâce aux alertes de sécurité",
-      "description_1": "Évitez de vous faire arnaquer et protégez vos données personnelles grâce aux alertes de sécurité fournies par Blockaid.",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "Vous devez faire preuve de diligence raisonnable avant d’approuver toute demande.",
-      "description_3": "Les utilisateurs qui ont déjà activé les alertes de sécurité OpenSea recevront désormais des alertes de sécurité de ce nouveau fournisseur.",
       "action_text": "Activer les alertes de sécurité"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "Ce réseau personnalisé n’est pas reconnu",
     "invalid_chain": "Le %{rpcUrl} de cet ID de chaîne ne correspond pas à la liste chainid.network",
     "alert_recommend": "Nous vous recommandons de",
-    "alert_verify": "vérifier l’ID de chaîne"
+    "alert_verify": "vérifier l’ID de chaîne",
+    "warning_subtext_new": {
+      "1": "MetaMask ne vérifie pas les réseaux personnalisés. N’approuvez donc que les réseaux dans lesquels vous avez confiance.",
+      "2": "En savoir plus sur la sécurité des réseaux et les risques d’arnaques."
+    },
+    "invalid_rpc_url": "L’URL de ce réseau ne correspond pas à celle du fournisseur qui utilise cet ID de chaîne.",
+    "invalid_chain_token_decimals": "Il semble que la décimale de ce réseau ne corresponde pas à l’ID de la chaîne.",
+    "unrecognized_chain_name": "Il semble que le nom de ce réseau ne corresponde pas à l’ID de la chaîne.",
+    "unrecognized_chain_ticker": "Il semble que le symbole de ce réseau ne corresponde pas à l’ID de cette chaîne.",
+    "unrecognized_chain_id": "Nous ne connaissons pas ce réseau. Assurez-vous que l’ID de la chaîne est correct avant de continuer."
   },
   "media_player": {
     "loading": "Chargement…",

@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "Nếu bạn chấp thuận yêu cầu này, một bên thứ ba nổi tiếng là lừa đảo có thể lấy hết tài sản của bạn.",
-    "attribution": "Lời khuyên bảo mật bởi",
+    "attribution": "Được cung cấp bởi",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "Nếu bạn chấp thuận yêu cầu này, người khác có thể đánh cắp tài sản của bạn được niêm yết trên Blur.",
     "deceptive_request_title": "Đây là một yêu cầu lừa đảo",
     "failed_title": "Yêu cầu có thể không an toàn",
     "failed_description": "Do có lỗi, yêu cầu này đã không được nhà cung cấp dịch vụ bảo mật xác minh. Hãy thực hiện cẩn thận.",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "Bạn đang tương tác với một tên miền độc hại. Nếu bạn chấp thuận yêu cầu này, bạn có thể mất tài sản của mình.",
     "other_description": "Nếu bạn chấp thuận yêu cầu này, bạn có thể mất tài sản của mình.",
     "raw_signature_farming_description": "Nếu bạn chấp thuận yêu cầu này, bạn có thể mất tài sản của mình.",
@@ -514,6 +516,7 @@
     "import_account": "Nhập tài khoản",
     "connect_hardware": "Kết nối với ví cứng",
     "imported": "Đã nhập",
+    "qr_hardware": "Ví cứng QR",
     "remove_account_title": "Đã gỡ bỏ tài khoản",
     "remove_account_message": "Bạn có thật sự muốn gỡ bỏ tài khoản này?",
     "no": "Không",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "Xem địa chỉ, số dư tài khoản và hoạt động",
     "suggest_transactions": "Đề xuất các giao dịch cần chấp thuận",
     "disconnect": "Ngắt kết nối",
-    "disconnect_all_accounts": "Ngắt kết nối tất cả các tài khoản"
+    "disconnect_all_accounts": "Ngắt kết nối tất cả các tài khoản",
+    "deceptive_site_ahead": "Phía trước là trang web lừa đảo",
+    "deceptive_site_desc": "Trang web mà bạn đang cố gắng truy cập không an toàn. Những kẻ tấn công có thể lừa bạn thực hiện một hành động nguy hiểm.",
+    "learn_more": "Tìm hiểu thêm",
+    "advisory_by": "Cảnh báo được cung cấp bởi Trình phát hiện lừa đảo qua mạng Ethereum và PhishFort",
+    "potential_threat": "Các mối đe dọa tiềm ẩn bao gồm",
+    "fake_metamask": "Các phiên bản giả mạo của MetaMask",
+    "srp_theft": "Đánh cắp mật khẩu hoặc cụm từ khôi phục bí mật",
+    "malicious_transactions": "Các giao dịch độc hại dẫn đến tài sản bị đánh cắp"
   },
   "toast": {
     "connected_and_active": "đã được kết nối và đang hoạt động.",
@@ -991,7 +1002,6 @@
     "confirm": "Xác nhận"
   },
   "transaction": {
-    "hardware": "Phần cứng",
     "alert": "CẢNH BÁO",
     "amount": "Số tiền",
     "next": "Tiếp",
@@ -1369,7 +1379,8 @@
     "you_can": "Hoặc bạn có thể",
     "add_network": "thêm thủ công các mạng khác.",
     "select_network": "Chọn mạng",
-    "show_test_networks": "Hiển thị các mạng thử nghiệm"
+    "show_test_networks": "Hiển thị các mạng thử nghiệm",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "Hủy",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "XEM PHIÊN",
     "network_not_supported": "Không hỗ trợ mạng hiện tại",
     "security_alerts": "Cảnh báo bảo mật",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "Vui lòng chuyển qua mạng chính hoặc sepolia"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "OK"
   },
   "whats_new": {
-    "title": "Xem thông tin mới",
+    "title": "What's new",
     "blockaid": {
       "title": "Đảm bảo an toàn với cảnh báo bảo mật",
-      "description_1": "Tránh xa các hành vi gian lận đã biết trong khi vẫn bảo vệ quyền riêng tư của bạn với các cảnh báo bảo mật do Blockaid cung cấp.",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "Luôn tự thẩm định trước khi chấp thuận các yêu cầu.",
-      "description_3": "Nếu bạn đã bật cảnh báo bảo mật từ OpenSea, chúng tôi đã chuyển bạn sang tính năng này.",
       "action_text": "Bật cảnh báo bảo mật"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "Không thể nhận diện mạng tùy chỉnh này",
     "invalid_chain": "%{rpcUrl} cho ID chuỗi này không khớp với danh sách chainid.network",
     "alert_recommend": "Chúng tôi khuyên bạn nên",
-    "alert_verify": "xác minh ID chuỗi"
+    "alert_verify": "xác minh ID chuỗi",
+    "warning_subtext_new": {
+      "1": "MetaMask không xác minh các mạng tùy chỉnh, vì vậy chỉ chấp thuận các mạng mà bạn tin tưởng.",
+      "2": "Tìm hiểu thêm về các rủi ro bảo mật mạng và các hành vi lừa đảo."
+    },
+    "invalid_rpc_url": "URL mạng này không trùng khớp với một nhà cung cấp đã biết cho ID chuỗi này.",
+    "invalid_chain_token_decimals": "Có vẻ như số thập phân của mạng này không trùng khớp với ID chuỗi của nó.",
+    "unrecognized_chain_name": "Có vẻ như tên hiển thị của mạng này không trùng khớp với ID chuỗi của nó.",
+    "unrecognized_chain_ticker": "Có vẻ như biểu tượng của mạng này không trùng khớp với ID chuỗi này.",
+    "unrecognized_chain_id": "Chúng tôi không nhận dạng được mạng này. Đảm bảo ID chuỗi phải chính xác trước khi bạn tiếp tục."
   },
   "media_player": {
     "loading": "Đang tải...",

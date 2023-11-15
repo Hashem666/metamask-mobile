@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "このリクエストを承認すると、詐欺が判明しているサードパーティに資産をすべて奪われる可能性があります。",
-    "attribution": "セキュリティアドバイスの提供元:",
+    "attribution": "提供元:",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "このリクエストを承認すると、Blurに登録されている資産を誰かに盗まれる可能性があります。",
     "deceptive_request_title": "これは虚偽のリクエストです",
     "failed_title": "リクエストが安全でない可能性があります",
     "failed_description": "エラーが発生したため、このリクエストはセキュリティプロバイダーにより確認されませんでした。慎重に進めてください。",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "悪質なドメインとやり取りしています。このリクエストを承認すると、資産を失う可能性があります。",
     "other_description": "このリクエストを承認すると、資産を失う可能性があります。",
     "raw_signature_farming_description": "このリクエストを承認すると、資産を失う可能性があります。",
@@ -514,6 +516,7 @@
     "import_account": "アカウントのインポート",
     "connect_hardware": "ハードウェアウォレットの接続",
     "imported": "インポートされました",
+    "qr_hardware": "QRハードウェア",
     "remove_account_title": "アカウントの削除",
     "remove_account_message": "このアカウントを削除してよろしいですか？",
     "no": "いいえ",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "アドレス、アカウント残高、アクティビティの表示",
     "suggest_transactions": "承認するトランザクションの提案",
     "disconnect": "接続解除",
-    "disconnect_all_accounts": "すべてのアカウントの接続を解除"
+    "disconnect_all_accounts": "すべてのアカウントの接続を解除",
+    "deceptive_site_ahead": "偽装サイトにアクセスしようとしています",
+    "deceptive_site_desc": "アクセスしようとしているサイトは安全ではありません。攻撃者が危険な行為に誘導しようとする可能性があります。",
+    "learn_more": "詳細",
+    "advisory_by": "イーサリアムフィッシング検知システムとPhishFortからの忠告",
+    "potential_threat": "潜在的な脅威には次のものが含まれます",
+    "fake_metamask": "MetaMaskの偽バージョン",
+    "srp_theft": "シークレットリカバリーフレーズまたはパスワードの窃取",
+    "malicious_transactions": "資産の窃取に繋がる悪質なトランザクション"
   },
   "toast": {
     "connected_and_active": "接続済みかつ有効です。",
@@ -991,7 +1002,6 @@
     "confirm": "確定"
   },
   "transaction": {
-    "hardware": "ハードウェア",
     "alert": "アラート",
     "amount": "金額",
     "next": "次へ",
@@ -1369,7 +1379,8 @@
     "you_can": "または",
     "add_network": "他のネットワークを手動で追加できます。",
     "select_network": "ネットワークを選択",
-    "show_test_networks": "テストネットワークを表示"
+    "show_test_networks": "テストネットワークを表示",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "キャンセル",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "セッションを表示",
     "network_not_supported": "現在のネットワークはサポートされていません",
     "security_alerts": "セキュリティアラート",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "メインネットまたはSepoliaに切り替えてください"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "OK"
   },
   "whats_new": {
-    "title": "新機能をご覧ください",
+    "title": "What's new",
     "blockaid": {
       "title": "セキュリティアラートで安全を確保",
-      "description_1": "Blockaidによるセキュリティアラートを使用して、プライバシーを守りつつ既知の詐欺を回避しましょう。",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "要求を承認する前に、必ず独自のデューデリジェンスを行ってください。",
-      "description_3": "OpenSeaのセキュリティアラートを有効にしていた場合、この機能に移行されました。",
       "action_text": "セキュリティアラートを有効にする"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "このカスタムネットワークは認識されていません",
     "invalid_chain": "このチェーンIDの%{rpcUrl}は、chainid.networkの情報と一致していません",
     "alert_recommend": "チェーンIDを確認することを",
-    "alert_verify": "お勧めします"
+    "alert_verify": "お勧めします",
+    "warning_subtext_new": {
+      "1": "MetaMaskはカスタムネットワークの検証を行わないため、信頼できるネットワークだけを承認してください。",
+      "2": "ネットワークのセキュリティリスクと詐欺に関する詳細をご覧ください。"
+    },
+    "invalid_rpc_url": "このネットワークURLは、このチェーンIDの既知のプロバイダーと一致しません。",
+    "invalid_chain_token_decimals": "このネットワークの小数桁数はチェーンIDと一致していないようです。",
+    "unrecognized_chain_name": "このネットワークの表示名はチェーンIDと一致していないようです。",
+    "unrecognized_chain_ticker": "このネットワークのシンボルはこのチェーンIDと一致していないようです。",
+    "unrecognized_chain_id": "このネットワークを認識できません。続行する前に、チェーンIDが正しいことを確認してください。"
   },
   "media_player": {
     "loading": "読み込み中...",

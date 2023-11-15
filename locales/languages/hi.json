@@ -1,12 +1,14 @@
 {
   "blockaid_banner": {
     "approval_farming_description": "यदि आप इस अनुरोध को स्वीकार करते हैं, तो स्कैम के लिए मशहूर कोई तृतीय पक्ष आपके सारे एसेट चुरा सकती है।",
-    "attribution": "की ओर से सुरक्षा सलाह",
+    "attribution": "के द्वारा पावर्ड",
     "attribution_link_name": "Blockaid",
     "blur_farming_description": "यदि आप इस अनुरोध को स्वीकार करते हैं, तो कोई Blur पर लिस्टेड आपके सारे एसेट चुरा सकता है।",
     "deceptive_request_title": "इस अनुरोध को धोखेबाजी के उद्देश्य से भेजा गया है",
     "failed_title": "हो सकता है कि अनुरोध सुरक्षित न हो",
     "failed_description": "कोई समस्या होने के कारण, इस अनुरोध को सिक्यूरिटी प्रोवाइडर द्वारा सत्यापित नहीं किया गया। सावधानी से आगे बढ़ें।",
+    "loading_title": "This request is still being simulated. We recommend waiting for its completion.",
+    "loading_complete_title": "Simulation completed. Review this request before proceeding.",
     "malicious_domain_description": "आप एक बुरी नीयत वाले डोमेन से इंटरैक्ट कर रहे हैं। यदि आप इस अनुरोध को स्वीकार करते हैं, तो आप अपने सारे एसेट गंवा सकते हैं।",
     "other_description": "यदि आप इस अनुरोध को स्वीकार करते हैं, तो आप अपने सारे एसेट गंवा सकते हैं।",
     "raw_signature_farming_description": "यदि आप इस अनुरोध को स्वीकार करते हैं, तो आप अपने सारे एसेट गंवा सकते हैं।",
@@ -514,6 +516,7 @@
     "import_account": "एक खाता इम्पोर्ट करें",
     "connect_hardware": "हार्डवेयर वॉलेट कनेक्ट करें",
     "imported": "इम्पोर्ट किया गया",
+    "qr_hardware": "QR हार्डवेयर",
     "remove_account_title": "अकाउंट हटाया जाना",
     "remove_account_message": "क्या आप वास्तव में इस अकाउंट को हटाना चाहते हैं?",
     "no": "नहीं",
@@ -537,7 +540,15 @@
     "address_balance_activity_permission": "पता, अकाउंट बैलेंस और गतिविधि को देखना",
     "suggest_transactions": "स्वीकृत करने के लिए लेनदेन का सुझाव देना",
     "disconnect": "डिसकनेक्ट करें",
-    "disconnect_all_accounts": "सभी खाते डिसकनेक्ट करें"
+    "disconnect_all_accounts": "सभी खाते डिसकनेक्ट करें",
+    "deceptive_site_ahead": "आगे धोखाधड़ी करने वाली साइट मौजूद है",
+    "deceptive_site_desc": "आप जिस साइट पर जाना चाह रहे हैं वह सुरक्षित नहीं है। हमला करने वाले आपको कुछ खतरनाक काम करने के लिए उकसा सकते हैं।",
+    "learn_more": "ज़्यादा जानें",
+    "advisory_by": "Ethereum Phishing Detector और PhishFort द्वारा दी गई एडवाइज़री",
+    "potential_threat": "बड़े ख़तरों में शामिल हैं",
+    "fake_metamask": "MetaMask के नकली वर्जन",
+    "srp_theft": "सीक्रेट रिकवरी फ्रेज़ या पासवर्ड की चोरी",
+    "malicious_transactions": "बुरी नीयत वाले ट्रांसेक्शन जिनके कारण एसेट चोरी हो जाते हैं"
   },
   "toast": {
     "connected_and_active": "कनेक्ट किया हुआ और सक्रिय।",
@@ -991,7 +1002,6 @@
     "confirm": "पुष्टि करें"
   },
   "transaction": {
-    "hardware": "हार्डवेयर",
     "alert": "सावधान",
     "amount": "रकम",
     "next": "अगला",
@@ -1369,7 +1379,8 @@
     "you_can": "या आप",
     "add_network": "मैन्युअल रूप से अधिक नेटवर्क जोड़ें।",
     "select_network": "एक नेटवर्क चुनें",
-    "show_test_networks": "परीक्षण नेटवर्क दिखाएं"
+    "show_test_networks": "परीक्षण नेटवर्क दिखाएं",
+    "deprecated_goerli": "Due to the protocol changes of Ethereum: Goerli test network may not work as reliably and will be deprecated soon."
   },
   "select": {
     "cancel": "रद्द करें",
@@ -1728,7 +1739,10 @@
     "wallet_connect_dapps_cta": "सत्र देखें",
     "network_not_supported": "वर्तमान नेटवर्क समर्थन नहीं करता",
     "security_alerts": "सुरक्षा चेतावनियाँ",
+    "security_alerts_desc": "This feature alerts you to malicious activity by locally reviewing your transaction and signature requests. Always do your own due diligence before approving any requests. There's no guarantee that this feature will detect all malicious activity. By enabling this feature you agree to the provider's terms of use.",
+    "select_provider": "Select your preferred provider",
     "blockaid": "Blockaid",
+    "blockaid_desc": "Privacy preserving - no data is shared with third parties. Available on Ethereum Mainnet.",
     "switch_network": "कृपया Mainnet या sepolia पर बदलें"
   },
   "walletconnect_sessions": {
@@ -2193,12 +2207,11 @@
     "ok": "ठीक है"
   },
   "whats_new": {
-    "title": "देखे क्या नया है",
+    "title": "What's new",
     "blockaid": {
       "title": "सुरक्षा चेतावनियों के माध्यम से सुरक्षित रहें",
-      "description_1": "Blockaid द्वारा पावर्ड सुरक्षा चेतावनी के माध्यम से अपनी गोपनीयता बनाए रखते हुए जाने-पहचाने घोटालों से बचें।",
+      "description_1": "Steer clear of known scams while still preserving your privacy with security alerts powered by Blockaid on Ethereum Mainnet.",
       "description_2": "किसी भी रिक्वेस्ट को मंजूरी देने से पहले हमेशा पूरी जांच-पड़ताल ज़रूर करें।",
-      "description_3": "अगर आपने OpenSea से सुरक्षा चेतावनी को इनेबल किया हुआ है, तो हम आपको यह सुविधा उपलब्ध करा चुके हैं।",
       "action_text": "सुरक्षा चेतावनियों को इनेबल करें"
     }
   },
@@ -2234,7 +2247,16 @@
     "unrecognized_chain": "यह कस्टम नेटवर्क मान्यता प्राप्त नहीं है",
     "invalid_chain": "इस चेन ID के लिए %{rpcUrl} chainid.network सूचीकरण से मेल नहीं खाता है",
     "alert_recommend": "हम अनुशंसा करते हैं कि आप",
-    "alert_verify": "चेन ID को सत्यापित करें"
+    "alert_verify": "चेन ID को सत्यापित करें",
+    "warning_subtext_new": {
+      "1": "MetaMask कस्टम नेटवर्क को वेरीफाई नहीं करता है, इसलिए केवल उन नेटवर्क को एप्रूव करें जिन पर आप भरोसा करते हैं।",
+      "2": "नेटवर्क सुरक्षा से संबंधित खतरों और स्कैम के बारे में ज़्यादा जानकारी पाएं।"
+    },
+    "invalid_rpc_url": "यह नेटवर्क URL इस चेन ID के लिए जाने-पहचाने प्रोवाइडर से मेल नहीं खाता है।",
+    "invalid_chain_token_decimals": "ऐसा लगता है कि इस नेटवर्क का दशमलव (decimal) इसकी चेन ID से मेल नहीं खाता है।",
+    "unrecognized_chain_name": "ऐसा लगता है कि इस नेटवर्क का डिस्प्ले नेम इसकी चेन ID से मेल नहीं खाता है।",
+    "unrecognized_chain_ticker": "ऐसा लगता है कि इस नेटवर्क का सिंबल इसकी चेन ID से मेल नहीं खाता है।",
+    "unrecognized_chain_id": "हम इस नेटवर्क को नहीं पहचानते। आगे बढ़ने से पहले, अच्छे से जांच-परख लें कि चेन ID सही है भी या नहीं।"
   },
   "media_player": {
     "loading": "लोड हो रहा है...",
