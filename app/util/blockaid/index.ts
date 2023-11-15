@@ -11,11 +11,11 @@ export const isBlockaidFeatureEnabled = () =>
 export const getBlockaidMetricsParams = (
   securityAlertResponse?: SecurityAlertResponse,
 ) => {
-  const additionalParams: Record<string, any> = {};  
+  const additionalParams: Record<string, any> = {};
 
   if (securityAlertResponse && isBlockaidFeatureEnabled()) {
     additionalParams.security_alert_reason = Reason.notApplicable;
-    
+
     const { result_type, reason, providerRequestsCount } =
       securityAlertResponse;
 

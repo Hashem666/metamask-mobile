@@ -12,6 +12,7 @@ import { ThemeContext, mockTheme } from '../../../util/theme';
 import sanitizeString from '../../../util/string';
 
 import {
+  addSignatureErrorListener,
   getAnalyticsParams,
   handleSignatureAction,
   removeSignatureErrorListener,
@@ -82,6 +83,13 @@ class TypedSign extends PureComponent {
 
   state = {
     truncateMessage: false,
+  };
+
+  componentDidMount = () => {
+    const {
+      messageParams: { metamaskId },
+    } = this.props;
+    addSignatureErrorListener(metamaskId, this.onSignatureError);
   };
 
   componentWillUnmount = () => {
