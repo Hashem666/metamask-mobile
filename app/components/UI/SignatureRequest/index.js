@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, InteractionManager } from 'react-native';
 import { fontStyles } from '../../../styles/common';
 import { getHost } from '../../../util/browser';
 import { strings } from '../../../../locales/i18n';
@@ -167,6 +167,53 @@ class SignatureRequest extends PureComponent {
     testID: PropTypes.string,
     securityAlertResponse: PropTypes.object,
   };
+
+  state = {
+    blockaidResultType: undefined,
+  };
+
+  componentWillUnmount() {
+    // store.dispatch(setSignatureRequestSecurityAlertResponse());
+  }
+
+  componentDidMount = () => {
+    const { type, securityAlertResponse } = this.props;
+
+    this.setState({
+      blockaidResultType: securityAlertResponse?.result_type,
+    });
+
+    if (securityAlertResponse) {
+      const analyticsParams = getAnalyticsParams(this.props, type);
+      InteractionManager.runAfterInteractions(() => {
+        AnalyticsV2.trackEvent(
+          MetaMetricsEvents.SIGNATURE_REQUESTED,
+          analyticsParams
+        );
+      });
+    }
+  }
+
+  componentDidUpdate = () => {
+    const { type, securityAlertResponse } = this.props;
+
+    const previousBlockaidResult = this.state.blockaidResultType;
+    const newBlockaidResult = securityAlertResponse?.result_type;
+
+    if (previousBlockaidResult !== newBlockaidResult) {
+      // Result Changed, update state and send analytics
+      this.setState({
+        blockaidResultType: newBlockaidResult,
+      });
+
+      InteractionManager.runAfterInteractions(() => {
+        AnalyticsV2.trackEvent(
+          MetaMetricsEvents.SIGNATURE_REQUESTED,
+          getAnalyticsParams(this.props, type),
+        );
+      });
+    }
+  }
 
   /**
    * Calls trackCancelSignature and onReject callback

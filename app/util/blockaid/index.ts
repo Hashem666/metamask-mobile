@@ -12,21 +12,25 @@ export const getBlockaidMetricsParams = (
   securityAlertResponse?: SecurityAlertResponse,
 ) => {
   const additionalParams: Record<string, any> = {};
+  additionalParams.security_alert_reason = Reason.notApplicable;
 
   if (securityAlertResponse && isBlockaidFeatureEnabled()) {
     const { result_type, reason, providerRequestsCount } =
       securityAlertResponse;
 
-    if (result_type === ResultType.Malicious) {
-      additionalParams.ui_customizations = ['flagged_as_malicious'];
-    }
-
     if (result_type !== ResultType.Benign) {
-      additionalParams.security_alert_reason = Reason.notApplicable;
+      if (result_type === ResultType.Malicious) {
+        additionalParams.ui_customizations = ['flagged_as_malicious'];
+      }
 
       if (reason) {
         additionalParams.security_alert_response = result_type;
         additionalParams.security_alert_reason = reason;
+      }
+
+      if (result_type === ResultType.RequestInProgress) {
+        additionalParams.ui_customizations = ['security_alert_loading'];
+        additionalParams.security_alert_response = 'loading';
       }
     }
 

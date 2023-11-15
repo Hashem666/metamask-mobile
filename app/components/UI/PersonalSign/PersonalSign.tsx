@@ -76,13 +76,6 @@ const PersonalSign = ({
   }, [currentPageInformation, messageParams, securityAlertResponse]);
 
   useEffect(() => {
-    AnalyticsV2.trackEvent(
-      MetaMetricsEvents.SIGNATURE_REQUESTED,
-      getAnalyticsParams(),
-    );
-  }, [getAnalyticsParams, securityAlertResponse]);
-
-  useEffect(() => {
     const onSignatureError = ({ error }: { error: Error }) => {
       if (error?.message.startsWith(KEYSTONE_TX_CANCELED)) {
         AnalyticsV2.trackEvent(

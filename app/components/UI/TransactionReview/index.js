@@ -263,6 +263,7 @@ class TransactionReview extends PureComponent {
     conversionRate: undefined,
     fiatValue: undefined,
     multiLayerL1FeeTotal: '0x0',
+    blockaidResultType: undefined,
   };
 
   fetchEstimatedL1Fee = async () => {
@@ -288,6 +289,29 @@ class TransactionReview extends PureComponent {
       });
     }
   };
+
+  componentDidUpdate = async () => {
+    const previousBlockaidResult = this.state.blockaidResultType;
+    const newBlockaidResult = this.props.transaction?.securityAlertResponse?.result_type;
+
+    if (previousBlockaidResult !== newBlockaidResult) {
+      // Result Changed, update state and send analytics
+      this.setState({
+        blockaidResultType: newBlockaidResult,
+      });
+
+      const additionalParams = getBlockaidMetricsParams(
+        this.props.transaction?.securityAlertResponse,
+      );
+
+      InteractionManager.runAfterInteractions(() => {
+        AnalyticsV2.trackEvent(
+          MetaMetricsEvents.TRANSACTIONS_CONFIRM_STARTED,
+          additionalParams,
+        );
+      });
+    }
+  }
 
   componentDidMount = async () => {
     const {
@@ -318,9 +342,17 @@ class TransactionReview extends PureComponent {
       [assetAmount, conversionRate, fiatValue] = this.getRenderValues()();
     }
 
-    const additionalParams = getBlockaidMetricsParams(
-      transaction?.securityAlertResponse,
-    );
+    let additionalParams;
+
+    if (transaction?.securityAlertResponse) {
+      additionalParams = getBlockaidMetricsParams(
+        transaction?.securityAlertResponse,
+      );
+
+      this.setState({
+        blockaidResultType: transaction?.securityAlertResponse?.result_type,
+      });
+    }
 
     this.setState({
       actionKey,

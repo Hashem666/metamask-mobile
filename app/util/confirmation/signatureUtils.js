@@ -31,7 +31,7 @@ export const getAnalyticsParams = (messageParams, signType) => {
     );
 
     return {
-      account_type: getAddressAccountType(messageParams.from),
+      account_type: getAddressAccountType(messageParams.from || messageParams.fromAddress),
       dapp_host_name: url && url?.host,
       chain_id: chainId,
       signature_type: signType,

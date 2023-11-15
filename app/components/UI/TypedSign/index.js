@@ -85,19 +85,6 @@ class TypedSign extends PureComponent {
     truncateMessage: false,
   };
 
-  componentDidMount = () => {
-    const {
-      messageParams: { metamaskId },
-      messageParams,
-    } = this.props;
-
-    AnalyticsV2.trackEvent(
-      MetaMetricsEvents.SIGNATURE_REQUESTED,
-      getAnalyticsParams(messageParams, 'typed_sign'),
-    );
-    addSignatureErrorListener(metamaskId, this.onSignatureError);
-  };
-
   componentWillUnmount = () => {
     const {
       messageParams: { metamaskId },
